@@ -27,7 +27,9 @@ function start() {
 
 
     var jogo = {};
-    var podeAtirar=true;
+
+    var podeAtirar = true;
+
     var velocidade=5;
     var posicaoY = parseInt(Math.random() * 334);
     var fimdejogo = false;
@@ -67,6 +69,7 @@ function start() {
     //Função que movimenta o jogador
 
     function movejogador() {
+
         if (jogo.pressionou[TECLA.uparrow]) {
             var topo = parseInt($("#jogador").css("top"));
 
@@ -125,6 +128,7 @@ function start() {
     //Função que movimenta o amigo
 
     function moveamigo() {
+
         posicaoX = parseInt($("#amigo").css("left"));
         $("#amigo").css("left",posicaoX+1);
                     
@@ -140,30 +144,34 @@ function start() {
 
     function disparo() {
     
-        somDisparo.play(); 
-
-        if (podeAtirar==true) {
-    
-        podeAtirar=false;
         
-        topo = parseInt($("#jogador").css("top"))
-        posicaoX= parseInt($("#jogador").css("left"))
-        tiroX = posicaoX + 190;
-        topoTiro=topo+37;
-        $("#fundo-game").append("<div id='disparo'></div");
-        $("#disparo").css("top",topoTiro);
-        $("#disparo").css("left",tiroX);
+
+        if (podeAtirar == true) {
+
+            somDisparo.play(); 
+
+            podeAtirar = false;
+            
+            topo = parseInt($("#jogador").css("top"))
+            posicaoX= parseInt($("#jogador").css("left"))
+            tiroX = posicaoX + 190;
+            topoTiro=topo+37;
+            $("#fundo-game").append("<div id='disparo'></div");
+            $("#disparo").css("top",topoTiro);
+            $("#disparo").css("left",tiroX);
         }
 
         var tempoDisparo=window.setInterval(executaDisparo, 30);
 
         function executaDisparo() {
+
             posicaoX = parseInt($("#disparo").css("left"));
             $("#disparo").css("left",posicaoX+15); 
+            console.log("pow")
 
-            if (posicaoX> 900) {                        
+            if (posicaoX > 900) {                        
              window.clearInterval(tempoDisparo);
-             tempoDisparo=null;
+             tempoDisparo= null;
              $("#disparo").remove();
              podeAtirar=true;
 
