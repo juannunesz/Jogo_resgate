@@ -10,7 +10,7 @@ no qual demonstro habilidades no front-end / criação de um jogo 2D, utilizei p
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [X] Correção do disparo
+- [ ] Correção do disparo
 
 
 ## 📫 Contribuindo para o Jogo Resgate
